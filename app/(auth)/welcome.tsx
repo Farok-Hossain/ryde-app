@@ -30,7 +30,9 @@ const Onboarding = () => {
         onIndexChanged={(index) => setActiveIndex(index)}
       >
         {onboarding.map((item) => (
-          <View>{item.title}</View>
+          <View>
+            <Text>{item.title}</Text>
+          </View>
         ))}
       </Swiper>
     </SafeAreaView>
