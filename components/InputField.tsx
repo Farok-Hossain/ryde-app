@@ -5,7 +5,7 @@ import {
   View,
 } from "react-native";
 
-const InputField = () => (
+const InputField = ({ label, labelStyle }) => (
   <KeyboardAvoidingView>
     <TouchableWithoutFeedback>
       <View className="my-2 w-full">
