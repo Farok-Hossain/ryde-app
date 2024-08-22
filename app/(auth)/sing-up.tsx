@@ -1,3 +1,4 @@
+import InputField from "@/components/InputField";
 import { images } from "@/constants";
 import { Image, ScrollView, Text, View } from "react-native";
 
@@ -10,6 +11,9 @@ const SingUp = () => {
           <Text className="text-black text-2xl font-JakartaSemiBold absolute bottom-5 left-5">
             Create Your Account
           </Text>
+        </View>
+        <View className="p-5">
+          <InputField />
         </View>
       </View>
     </ScrollView>
