@@ -9,6 +9,7 @@ import Swiper from "react-native-swiper";
 const Onboarding = () => {
   const swiperRef = useRef<Swiper>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const isLastSlide = activeIndex === onboarding.length - 1;
   return (
     <SafeAreaView className="flex h-full bg-white items-center justify-between">
       <TouchableOpacity
@@ -48,7 +49,15 @@ const Onboarding = () => {
           </View>
         ))}
       </Swiper>
-      <CustomButton title="Next" className="w-11/12 mt-10" />
+      <CustomButton
+        title={isLastSlide ? "Get Started" : "Next"}
+        onPress={() =>
+          isLastSlide
+            ? router.replace("/(auth)/sing-up")
+            : swiperRef.current?.scrollBy(1)
+        }
+        className="w-11/12 mt-10"
+      />
     </SafeAreaView>
   );
 };
