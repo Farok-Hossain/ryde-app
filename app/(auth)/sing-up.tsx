@@ -22,6 +22,21 @@ const SingUp = () => {
             value={form.name}
             onChangeText={(value) => setForm({ ...form, name: value })}
           />
+          <InputField
+            label="Email"
+            placeholder="Enter your email"
+            icon={icons.email}
+            value={form.email}
+            onChangeText={(value) => setForm({ ...form, email: value })}
+          />
+          <InputField
+            label="Password"
+            placeholder="Enter your password"
+            icon={icons.lock}
+            secureTextEntry={true}
+            value={form.password}
+            onChangeText={(value) => setForm({ ...form, password: value })}
+          />
         </View>
       </View>
     </ScrollView>
