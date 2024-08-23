@@ -20,7 +20,7 @@ const SingIn = () => {
             Welcome 👋
           </Text>
         </View>
-        <View className="p-6">
+        <View className="p-5">
           <InputField
             label="Email"
             placeholder="Enter your email"
@@ -45,7 +45,7 @@ const SingIn = () => {
 
           <OAuth />
           <Link
-            href="/sing-up"
+            href="/sign-in"
             className="text-lg text-center text-general-200 mt-10"
           >
             <Text>Don't have an account?</Text>
