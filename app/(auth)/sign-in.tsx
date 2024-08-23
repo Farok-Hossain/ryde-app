@@ -20,7 +20,7 @@ const SingIn = () => {
             Welcome 👋
           </Text>
         </View>
-        <View className="p-5">
+        <View className="p-6">
           <InputField
             label="Email"
             placeholder="Enter your email"
