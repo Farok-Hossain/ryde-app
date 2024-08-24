@@ -12,7 +12,7 @@ const SingUp = () => {
 
   const [form, setForm] = useState({ name: "", email: "", password: "" });
 
-  const [Verification, setVerification] = useState({
+  const [verification, setVerification] = useState({
     state: "default",
     error: "",
     code: "",
@@ -31,7 +31,7 @@ const SingUp = () => {
 
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
 
-      setVerification({ ...Verification, state: "pending" });
+      setVerification({ ...verification, state: "pending" });
     } catch (err: any) {
       console.error(JSON.stringify(err, null, 2));
     }
@@ -44,12 +44,12 @@ const SingUp = () => {
 
     try {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
-        code,
+        code: verification.code,
       });
 
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
-        router.replace("/");
+        setVerification({ ...verification, state: "success" });
       } else {
         console.error(JSON.stringify(completeSignUp, null, 2));
       }
