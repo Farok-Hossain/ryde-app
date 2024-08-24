@@ -6,6 +6,7 @@ import { useSignUp } from "@clerk/clerk-expo";
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
+import { ReactNativeModal } from "react-native-modal";
 
 const SingUp = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -13,7 +14,7 @@ const SingUp = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
 
   const [verification, setVerification] = useState({
-    state: "default",
+    state: "success",
     error: "",
     code: "",
   });
@@ -116,7 +117,14 @@ const SingUp = () => {
           </Link>
         </View>
 
-        {/* Verification Modal */}
+        <ReactNativeModal isVisible={verification.state === "success"}>
+          <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
+            <Image
+              source={images.check}
+              className="w-[110px] h-[110px] mx-auto my-5"
+            />
+          </View>
+        </ReactNativeModal>
       </View>
     </ScrollView>
   );
