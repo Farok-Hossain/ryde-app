@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { ClerkProvider, ClerkLoaded } from "@clerk/clerk-expo";
-import { Slot } from "expo-router";
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
