@@ -51,7 +51,11 @@ const SingUp = () => {
         await setActive({ session: completeSignUp.createdSessionId });
         setVerification({ ...verification, state: "success" });
       } else {
-        console.error(JSON.stringify(completeSignUp, null, 2));
+        setVerification({
+          ...verification,
+          error: "Verification failed.",
+          state: "failed",
+        });
       }
     } catch (err: any) {
       // See https://clerk.com/docs/custom-flows/error-handling
