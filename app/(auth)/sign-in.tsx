@@ -6,7 +6,7 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
-const SingIn = () => {
+const SignIn = () => {
   const [form, setForm] = useState({ email: "", password: "" });
 
   const onSignInPress = async () => {};
@@ -45,7 +45,7 @@ const SingIn = () => {
 
           <OAuth />
           <Link
-            href="/sing-up"
+            href="/sign-up"
             className="text-lg text-center text-general-200 mt-10"
           >
             <Text>Don't have an account?</Text>
@@ -59,4 +59,4 @@ const SingIn = () => {
   );
 };
 
-export default SingIn;
+export default SignIn;

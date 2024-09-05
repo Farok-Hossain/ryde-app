@@ -14,7 +14,7 @@ export default function Page() {
         <Link href="/sign-in">
           <Text>Sign In</Text>
         </Link>
-        <Link href="/sing-up">
+        <Link href="/sign-up">
           <Text>Sign Up</Text>
         </Link>
       </SignedOut>
