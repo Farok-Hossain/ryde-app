@@ -130,6 +130,16 @@ const SingUp = () => {
             <Text className="font-Jakarta mb-5">
               We've sent a verification code to {form.email}
             </Text>
+            <InputField
+              label="Code"
+              icon={icons.lock}
+              placeholder="12345"
+              value={verification.code}
+              keyboardType="numeric"
+              onChangeText={(code) =>
+                setVerification({ ...verification, code })
+              }
+            />
           </View>
         </ReactNativeModal>
 
