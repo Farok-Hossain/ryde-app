@@ -41,8 +41,18 @@ const RideCard = ({
           </View>
         </View>
       </View>
+
+      <View className=" flex flex-col w-full mt-5 bg-general-500 rounded-lg p-3 items-center justify-center">
+        <View className="flex flex-row items-center w-full justify-between mb-5">
+          <Text className="text-md font-JakartaMedium text-gray-500 ">
+            Date & Time
+          </Text>
+          <Text className="text-md font-JakartaMedium text-gray-500 ">
+            {formatDate(created_at)}, {formatDate(ride_time)}
+          </Text>
+        </View>
+      </View>
     </View>
-    <Text className="text-3xl">{driver.first_name}</Text>
   </View>
 );
 
