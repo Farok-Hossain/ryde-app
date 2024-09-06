@@ -1,6 +1,6 @@
 import RideCard from "@/components/RideCard";
-import { SignedIn, useUser } from "@clerk/clerk-expo";
-import { FlatList, Text } from "react-native";
+import { useUser } from "@clerk/clerk-expo";
+import { FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const recentRides = [
