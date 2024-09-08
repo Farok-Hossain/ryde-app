@@ -2,7 +2,9 @@ import GoogleTextInput from "@/components/GoogleTextInput";
 import Map from "@/components/Map";
 import RideCard from "@/components/RideCard";
 import { icons, images } from "@/constants";
+import { useLocationStore } from "@/store";
 import { useUser } from "@clerk/clerk-expo";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -121,12 +123,18 @@ const recentRides = [
 ];
 
 export default function Page() {
+  const { setUserLocation, setDestinationLocation } = useLocationStore();
+
   const { user } = useUser();
   const loading = true;
+
+  const [hasPermissions, setHasPermissions] = useState(false);
 
   const handleSignOut = () => {};
 
   const handleDestinationPress = () => {};
+
+  useEffect(() => {}, []);
 
   return (
     <SafeAreaView className="bg-general-500">
