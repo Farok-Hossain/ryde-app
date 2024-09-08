@@ -1,9 +1,19 @@
 import { Text } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { PROVIDER_DEFAULT } from "react-native-maps";
 
 const Map = () => {
+  // const region = {}
   return (
-    <MapView>
+    <MapView
+      provider={PROVIDER_DEFAULT}
+      className="w-full h-full rounded-2xl"
+      tintColor="black"
+      mapType="mutedStandard"
+      showsPointsOfInterest={false}
+      // initialRegion={region}
+      showsUserLocation={true}
+      userInterfaceStyle="light"
+    >
       <Text>Map</Text>
     </MapView>
   );
